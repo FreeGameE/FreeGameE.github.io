@@ -16,7 +16,7 @@ function App() {
   const [completedCount, setCompletedCount] = useState(0);
   const [inWorkCount, setInWorkCount] = useState(0);
 
-  // функция для получения данных
+  // функция для получения данных 123
   async function fetchData(status) {
     try {
       const response = await fetch(
