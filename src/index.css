@@ -1,0 +1,165 @@
+html {
+  background-color: rgb(74, 137, 200);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header {
+  font-family: inherit;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#main-board {
+  max-width: 24rem;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background-color: rgb(228, 234, 255);
+  border-radius: 1rem;
+  display: block;
+}
+
+.todo {
+  padding: 0rem 1rem;
+  margin: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.todo button {
+  padding: 0px;
+  width: 2rem;
+  height: 2rem;
+}
+
+.todo .accept-button {
+  margin-right: 0.6rem;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(17, 142, 27);
+}
+.todo .cancel-button {
+  margin-right: 0.6rem;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(245, 103, 20);
+}
+.todo .edit-button {
+  margin-right: 0.6rem;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(62, 116, 255);
+}
+
+.todo .unactive {
+  opacity: 0.7;
+  pointer-events: none
+}
+
+.todo .delete-button {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(255, 62, 62);
+}
+
+button img {
+  margin: 0.3rem;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  max-width: 16rem;
+  
+}
+
+.left-side p {
+  word-break: break-all;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 16px 0px;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+textarea {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 5px;
+  resize: none;
+  width: 12rem;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 16px 0px;
+  padding: 0;
+}
+
+.new-todo {
+  display: flex;
+  /* margin: 0 auto; */
+  justify-content: center;
+  /* margin-bottom: 1rem; */
+}
+
+.new-todo button {
+  padding: 0.4rem 2rem 0.6rem;
+  margin-left: 0.6rem;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(62, 116, 255);
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+.new-todo input {
+  position: relative;
+  bottom: 1px;
+  border: none;
+  background-color: transparent;
+  box-shadow: 0px 1px rgb(154, 154, 154);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+form {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.todoStatus {
+  margin: 0.6rem auto;
+  margin-top: 1.5rem;
+  width: 23.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoStatus button {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: grey;
+}
+
+.todoStatus button.active {
+  color: dodgerblue;
+  text-decoration: underline;
+}
