@@ -4,7 +4,7 @@ import TaskInput from "./copmonents/TaskInput";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [data, setData] = useState([]); // храним данные, полученные с бэкенда 123
+  const [data, setData] = useState([]); // храним данные, полученные с бэкенда
   const [loading, setLoading] = useState(true); // индикатор загрузки
   const [formAddData, setFormAddData] = useState({
     isDone: false,
