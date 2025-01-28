@@ -163,3 +163,8 @@ form {
   color: dodgerblue;
   text-decoration: underline;
 }
+
+.todo-text-completed {
+  text-decoration: line-through;
+  color: dimgray;
+}

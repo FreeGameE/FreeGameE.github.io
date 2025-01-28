@@ -148,7 +148,7 @@ export default function TaskInput({
                   </form>
                 </>
               ) : (
-                <p className="todo-text">{todo.title}</p>
+                <p className={todo.isDone ? "todo-text-completed" : undefined}>{todo.title}</p>
               )}
             </section>
             <section className="right-side">
