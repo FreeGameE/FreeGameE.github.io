@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import passed from "../../public/passed.png";
 import emptyCircle from "../../public/empty-circle.png";
 import edit from "../../public/edit.png";
@@ -92,6 +92,7 @@ export default function TaskInput({
         {data.map((todo) => (
           <div className="todo" key={todo.id}>
             <section className="left-side">
+              
               <img
                 src={todo.isDone ? passed : emptyCircle}
                 style={{
@@ -99,14 +100,29 @@ export default function TaskInput({
                   height: "1rem",
                   marginRight: "0.6rem",
                 }}
-                onMouseEnter={() =>
-                  setFormAddData({
-                    isDone: true,
-                    title: "",
-                  })
-                }
+                
+                onMouseDown={() => {
+                  !todo.isDone
+                    ? setFormAddData({
+                        isDone: true,
+                        title: "",
+                      })
+                    : setFormAddData({
+                        isDone: false,
+                        title: "",
+                      })
+                }}
                 onClick={() => {
-                  changeData(todo.id, activeStatusButton);
+                  !todo.isDone
+                    ? (setFormAddData({
+                        isDone: true,
+                        title: "",
+                      }))
+                    : (setFormAddData({
+                        isDone: false,
+                        title: "",
+                      })),
+                    changeData(todo.id, activeStatusButton)
                 }}
               />
               {activeInput == todo.id ? (
@@ -148,7 +164,9 @@ export default function TaskInput({
                   </form>
                 </>
               ) : (
-                <p className={todo.isDone ? "todo-text-completed" : undefined}>{todo.title}</p>
+                <p className={todo.isDone ? "todo-text-completed" : undefined}>
+                  {todo.title}
+                </p>
               )}
             </section>
             <section className="right-side">
