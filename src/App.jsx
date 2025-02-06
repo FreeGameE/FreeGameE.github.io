@@ -1,5 +1,7 @@
 import Header from "./copmonents/Header";
-import TaskInput from "./copmonents/TaskInput";
+import TaskList from "./copmonents/TaskList";
+import AddTask from "./copmonents/AddTask";
+import ChangeList from "./copmonents/ChangeList";
 
 import { useState, useEffect } from "react";
 
@@ -15,8 +17,9 @@ function App() {
   const [allCount, setAllCount] = useState(0);
   const [completedCount, setCompletedCount] = useState(0);
   const [inWorkCount, setInWorkCount] = useState(0);
+  const [activeStatusButton, setActiveStatusButton] = useState("all");
 
-  // функция для получения данных 123
+  // функция для получения данных
   async function fetchData(status) {
     try {
       const response = await fetch(
@@ -71,7 +74,7 @@ function App() {
       }
     } catch (error) {
       console.error("Ошибка при удалении данных:", error);
-    } 
+    }
   }
 
   // изменение данных на сервере
@@ -105,18 +108,27 @@ function App() {
     <>
       <Header />
       <section id="main-board">
-        <TaskInput
-          data={data}
+        <AddTask
+          updateData={updateData}
           setFormAddData={setFormAddData}
           formAddData={formAddData}
-          updateData={updateData}
-          deleteData={deleteData}
-          changeData={changeData}
+          activeStatusButton={activeStatusButton}
+        />
+        <ChangeList
           fetchData={fetchData}
           allCount={allCount}
           completedCount={completedCount}
           inWorkCount={inWorkCount}
-          // maxId={maxId}
+          activeStatusButton={activeStatusButton}
+          setActiveStatusButton={setActiveStatusButton}
+        />
+        <TaskList
+          data={data}
+          setFormAddData={setFormAddData}
+          formAddData={formAddData}
+          deleteData={deleteData}
+          changeData={changeData}
+          activeStatusButton={activeStatusButton}
         />
       </section>
     </>
