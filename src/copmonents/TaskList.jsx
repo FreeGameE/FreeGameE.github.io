@@ -10,7 +10,7 @@ export default function TaskList({
 }) {
   return (
     <>
-      {/* Для каждого элемента списка Todos создадим новый div с классом todo. Этот div будет содержать элементы с задачами */}
+      {/* Для каждого элемента списка Todos создадим новый div с классом todo. Этот div будет содержать элементы с задача */}
       <div className="todo-list">
         {data.map((todo) => (
           <TaskItem
